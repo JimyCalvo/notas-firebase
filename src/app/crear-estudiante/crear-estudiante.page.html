@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ingresar Datos de Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="last_name" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nota1</ion-label>
+        <ion-input formControlName="nota1" id="nota1" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nota2</ion-label>
+        <ion-input formControlName="nota2" id="nota2" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nota3</ion-label>
+        <ion-input formControlName="nota3" id="nota3" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nota4</ion-label>
+        <ion-input formControlName="nota4" id="nota4" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nota5</ion-label>
+        <ion-input formControlName="nota5" id="nota5" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Total</ion-label>
+        <ion-input formControlName="total" type="text" id="total" required>
+        </ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Guardar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
+<script>
+  var nota1 = document.getElementById("nota1");
+  console.log(nota1);
+  var nota2 = document.getElementById("nota2");
+  var nota3 = document.getElementById("nota3");
+  var nota4 = document.getElementById("nota4");
+  var nota5 = document.getElementById("nota5");
+  nota1.addEventListener("input", sumar);
+  nota2.addEventListener("input", sumar);
+  nota3.addEventListener("ion-input", sumar);
+  nota4.addEventListener("ion-input", sumar);
+  nota5.addEventListener("ion-input", sumar);
+
+  function sumar() {
+      var num1 = parseFloat(nota1.value) || 0;
+      var num2 = parseFloat(nota2.value) || 0;
+      var num3 = parseFloat(nota3.value) || 0;
+      var num4 = parseFloat(nota4.value) || 0;
+      var num5 = parseFloat(nota5.value) || 0;
+      suma=num1*0.2 + num2*0.2 +num3*0.2+num4*0.1+num5*0.3;
+      document.getElementById("total").value = suma;
+      resultado.innerHTML = suma
+      console.log(suma);
+  }
+
+</script>
